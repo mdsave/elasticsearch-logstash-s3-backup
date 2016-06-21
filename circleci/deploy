@@ -12,6 +12,7 @@ if ! aptible apps | grep -q "^$APTIBLE_APP"; then
   aptible apps:create $APTIBLE_APP --account=$APTIBLE_ACCOUNT
 
   # Set configuration
+  # Access key in shared 1Password under "Elasticsearch Logstash S3 Backup AWS Credentials"
   aptible config:set FORCE_SSL=true \
     DISABLE_WEAK_CIPHER_SUITES=true \
     DATABASE_URL=$DATABASE_URL \
