@@ -1,0 +1,17 @@
+machine:
+  environment:
+    APTIBLE_APP: mdsave-elasticsearch-logstash-s3-backup
+    APTIBLE_ACCOUNT: mdsave-prod
+    S3_BUCKET: logs.mdsave.com
+    MAX_DAYS_TO_KEEP: 180
+  ruby:
+    version: 2.1.2
+test:
+  override: 
+    - circleci/noop
+deployment:
+    master:
+      branch:
+        - master
+      commands:
+        - circleci/deploy
