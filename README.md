@@ -148,6 +148,14 @@ $ aptible ssh --app YOUR_APP_HANDLE bash
 bash-4.3# DATABASE_URL=https://some-other-elasticsearch ./restore-index.sh logstash-2015-07-09
 ```
 
+To restore a date range you can use `./resore-index-range` script included in this 
+repository with the Aptible CLI. For example, to load the indexes for date range  
+July 10, 2018 to September 1, 2018, run
+
+```
+aptible ssh --app YOUR_APP_HANDLE ./restore-index-range.sh 2018-07-10 2018-09-01
+```
+
 ## Copyright and License
 
 MIT License, see [LICENSE](LICENSE.md) for details.
